@@ -1,9 +1,24 @@
+@import "style.scss";
+
+
 p {
     margin: 0px;
 }
+input {
+    display: none;
+}
+
+.header__link {
+    position: absolute;
+    left: 15px;
+    &__fleche {
+        font-size: 30px;
+        color: #353535;
+    }
+}
 
 .image {
-    height: 50vh;
+    height: 40vh;
     width: 100%;
 }
 .image__banniere {
@@ -13,7 +28,7 @@ p {
 }
 
 #menu {
-    display:  flex;
+    display: flex;
     justify-content: center;
 }
 .menu {
@@ -21,9 +36,8 @@ p {
     width: 100%;
     display: flex;
     flex-direction: column;
-    border: black solid;
-    margin-top: -60px;
-    background-color: red;
+    margin-top: -50px;
+    background-color: #f6f6f6;
     border-radius: 30px 30px 0 0;
     &__header {
         display: flex;
@@ -38,24 +52,9 @@ p {
             position: relative;
             width: 30px;
             .card__coeur {
-                font-size: 21px;
-                position: absolute;
-                bottom: 7px;
+                top: 7px;
                 left: 5px;
-                &--vide {
-                    color: black;
-                }
-                &--rempli {
-                    opacity: 0;
-                    transition: opacity 250ms;
-                    &:hover {
-                        opacity: 1;
-                        color: transparent;
-                        background-image: linear-gradient(175deg, #9356DC 0%, #FF79DA 100%);
-                        background-clip: text;
-                        -webkit-background-clip: text;
-                    }
-                }
+                @include coeur()  
             }
         }
     }
@@ -72,64 +71,67 @@ p {
             border-bottom: #99e2d0 solid 3px;
            
         }
-        &__card {
+    }
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        background-color: #ffffff;
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10);
+        margin-bottom: 12px;
+        height: 69px;
+        overflow: hidden;
+        
+
+
+        &__content {
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
-            background-color: #ffffff;
-            border-radius: 15px;
-            margin-bottom: 12px;
-            padding: 15px;
-            box-shadow: 0px 4px 15px 0px #000000;
+            padding: 13px;
+            width: 0%;
+            gap: 10px;
+            box-sizing: border-box;
+            flex-grow: 1;
 
         }
-    }
-    &__card__text {
-        &--titre {
-            margin-bottom: 5px;
-            font-size: 18px;
+        &__text {
+            overflow: hidden;
+            white-space: nowrap;
+            
+            &--titre {
+                margin-bottom: 5px;
+                font-size: 18px;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            &--soustitre {
+                font-size: 15px;
+                font-weight: 300;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            &--prix {
+                font-weight: 700;
+            }
         }
-        &--soustitre {
-            font-size: 15px;
-            font-weight: 300;
+        &__validation {
+            width: 0px;
+            overflow: hidden;
+            border-radius: 0 15px 15px 0;
+            transition: width 0.3s;
         }
-        &--prix {
-            font-weight: 700;
+        & input:checked ~ .menu__card__validation {
+            width: 60px;
+
         }
     }
     &__foot {
         display: flex;
         justify-content: center;
-        .banniere__btn-explorer {
-            width: 218px;
-            height: 50px;
-            background: linear-gradient(#FF79DA, #9256dc);
-            border-radius: 25px;
-            border: none;
-            color: #FFFFFF;
-            font-size: 16px;
-            box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-            position: relative;
-            z-index: 1;
-            &:hover {
-                &::after {
-                    opacity: 1;
-                }
-            }
-            &::after {
-                border-radius: 25px;
-                content: "";
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
-                background: linear-gradient(lighten(#FF79DA, 5) 0%, lighten(#9256dc, 5) 100%);
-                opacity: 0;
-                z-index: -1;
-                transition: opacity 250ms;
-            }
+        margin: 20px 0px 40px 0px;
+        &__btn {
+            @include bouton-gradient()
         }
     }
 }

@@ -17,11 +17,13 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
-        <link rel="stylesheet" href="../Assets/style.css" />
-        <link rel="stylesheet" href="../Assets/style_menu.css" />
+        <link rel="stylesheet" href="../Assets/css/style_menu.css" />
     </head>
     <body>
         <header>
+            <a class="header__link" href="../index.html"
+                ><i class="header__link__fleche fa-solid fa-arrow-left"></i
+            ></a>
             <h1 class="logo">ohmyfood</h1>
         </header>
         <main>
@@ -37,132 +39,391 @@
                     <div class="menu__header">
                         <h2 class="menu__header__titre">La palette du goût</h2>
                         <div class="menu__header__heart">
-                            <i
-                                class="card__coeur card__coeur--vide fa-regular fa-heart"
-                            ></i>
-                            <i
-                                class="card__coeur card__coeur--rempli fa-solid fa-heart"
-                            ></i>
+                            <label class="card__coeur">
+                                <input type="checkbox" />
+                                <i class="coeur--vide fa-regular fa-heart"></i>
+                                <i class="coeur--rempli fa-solid fa-heart"></i>
+                            </label>
                         </div>
                     </div>
                     <div class="menu__body">
                         <div class="menu__body__entrees">
                             <h3 class="menu__body__titre">Entrées</h3>
-                            <div class="menu__body__card">
-                                <div class="menu__card__text">
-                                    <p class="menu__card__text--titre">
-                                        Fricassée d'escargots
-                                    </p>
-                                    <p class="menu__card__text--soustitre">
-                                        Au piment d'Espelette
-                                    </p>
+                            <label>
+                                <div class="menu__card">
+                                    <div class="menu__card__content">
+                                        <div class="menu__card__text">
+                                            <p class="menu__card__text--titre">
+                                                Fricassée d'escargots
+                                            </p>
+                                            <p
+                                                class="menu__card__text--soustitre"
+                                            >
+                                                Au piment d'Espelette
+                                            </p>
+                                        </div>
+                                        <p class="menu__card__text--prix">
+                                            25€
+                                        </p>
+                                    </div>
+                                    <input type="checkbox" />
+                                    <div class="menu__card__validation">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="60"
+                                            height="69"
+                                            viewBox="0 0 60 69"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
+                                                fill="#99E2D0"
+                                            />
+                                            <path
+                                                d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <p class="menu__card__text--prix">25€</p>
-                            </div>
-                            <div class="menu__body__card">
-                                <div class="menu__card__text">
-                                    <p class="menu__card__text--titre">
-                                        Foie gras de canard mi-cuit
-                                    </p>
-                                    <p class="menu__card__text--soustitre">
-                                        Et ses copeaux de truffe noire
-                                    </p>
+                            </label>
+                            <label>
+                                <div class="menu__card">
+                                    <div class="menu__card__content">
+                                        <div class="menu__card__text">
+                                            <p class="menu__card__text--titre">
+                                                Foie gras de canard mi-cuit
+                                            </p>
+                                            <p
+                                                class="menu__card__text--soustitre"
+                                            >
+                                                Et ses copeaux de truffe noire
+                                            </p>
+                                        </div>
+                                        <p class="menu__card__text--prix">
+                                            35€
+                                        </p>
+                                    </div>
+                                    <input type="checkbox" />
+                                    <div class="menu__card__validation">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="60"
+                                            height="69"
+                                            viewBox="0 0 60 69"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
+                                                fill="#99E2D0"
+                                            />
+                                            <path
+                                                d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <p class="menu__card__text--prix">35€</p>
-                            </div>
-                            <div class="menu__body__card">
-                                <div class="menu__card__text">
-                                    <p class="menu__card__text--titre">
-                                        Œuf au plat
-                                    </p>
-                                    <p class="menu__card__text--soustitre">
-                                        Assaisonné à la truffe sur lit de caviar
-                                    </p>
+                            </label>
+                            <label>
+                                <div class="menu__card">
+                                    <div class="menu__card__content">
+                                        <div class="menu__card__text">
+                                            <p class="menu__card__text--titre">
+                                                Œuf au plat
+                                            </p>
+                                            <p
+                                                class="menu__card__text--soustitre"
+                                            >
+                                                Assaisonné à la truffe sur lit
+                                                de caviar
+                                            </p>
+                                        </div>
+                                        <p class="menu__card__text--prix">
+                                            20€
+                                        </p>
+                                    </div>
+                                    <input type="checkbox" />
+                                    <div class="menu__card__validation">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="60"
+                                            height="69"
+                                            viewBox="0 0 60 69"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
+                                                fill="#99E2D0"
+                                            />
+                                            <path
+                                                d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <p class="menu__card__text--prix">20€</p>
-                            </div>
+                            </label>
                         </div>
                         <div class="menu__body__plats">
                             <h3 class="menu__body__titre">Plats</h3>
-                            <div class="menu__body__card">
-                                <div class="menu__card__text">
-                                    <p class="menu__card__text--titre">
-                                        Filet de bœuf aux herbes
-                                    </p>
-                                    <p class="menu__card__text--soustitre">
-                                        Accompagné de sa ribambelle de légumes
-                                    </p>
+                            <label>
+                                <div class="menu__card">
+                                    <div class="menu__card__content">
+                                        <div class="menu__card__text">
+                                            <p class="menu__card__text--titre">
+                                                Filet de bœuf aux herbes
+                                            </p>
+                                            <p
+                                                class="menu__card__text--soustitre"
+                                            >
+                                                Accompagné de sa ribambelle de
+                                                légumes
+                                            </p>
+                                        </div>
+                                        <p class="menu__card__text--prix">
+                                            40€
+                                        </p>
+                                    </div>
+                                    <input type="checkbox" />
+                                    <div class="menu__card__validation">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="60"
+                                            height="69"
+                                            viewBox="0 0 60 69"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
+                                                fill="#99E2D0"
+                                            />
+                                            <path
+                                                d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <p class="menu__card__text--prix">40€</p>
-                            </div>
-                            <div class="menu__body__card">
-                                <div class="menu__card__text">
-                                    <p class="menu__card__text--titre">
-                                        Parmentier de queue de bœuf
-                                    </p>
-                                    <p class="menu__card__text--soustitre">
-                                        À la truffe noire sur sa purée de panais
-                                    </p>
+                            </label>
+                            <label>
+                                <div class="menu__card">
+                                    <div class="menu__card__content">
+                                        <div class="menu__card__text">
+                                            <p class="menu__card__text--titre">
+                                                Parmentier de queue de bœuf
+                                            </p>
+                                            <p
+                                                class="menu__card__text--soustitre"
+                                            >
+                                                À la truffe noire sur sa purée
+                                                de panais
+                                            </p>
+                                        </div>
+                                        <p class="menu__card__text--prix">
+                                            35€
+                                        </p>
+                                    </div>
+                                    <input type="checkbox" />
+                                    <div class="menu__card__validation">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="60"
+                                            height="69"
+                                            viewBox="0 0 60 69"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
+                                                fill="#99E2D0"
+                                            />
+                                            <path
+                                                d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <p class="menu__card__text--prix">35€</p>
-                            </div>
-                            <div class="menu__body__card">
-                                <div class="menu__card__text">
-                                    <p class="menu__card__text--titre">
-                                        Filet de turbot
-                                    </p>
-                                    <p class="menu__card__text--soustitre">
-                                        Aux agrumes
-                                    </p>
+                            </label>
+                            <label>
+                                <div class="menu__card">
+                                    <div class="menu__card__content">
+                                        <div class="menu__card__text">
+                                            <p class="menu__card__text--titre">
+                                                Filet de turbot
+                                            </p>
+                                            <p
+                                                class="menu__card__text--soustitre"
+                                            >
+                                                Aux agrumes
+                                            </p>
+                                        </div>
+                                        <p class="menu__card__text--prix">
+                                            44€
+                                        </p>
+                                    </div>
+                                    <input type="checkbox" />
+                                    <div class="menu__card__validation">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="60"
+                                            height="69"
+                                            viewBox="0 0 60 69"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
+                                                fill="#99E2D0"
+                                            />
+                                            <path
+                                                d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <p class="menu__card__text--prix">44€</p>
-                            </div>
+                            </label>
                         </div>
                         <div class="menu__body__desserts">
                             <h3 class="menu__body__titre">Desserts</h3>
-                            <div class="menu__body__card">
-                                <div class="menu__card__text">
-                                    <p class="menu__card__text--titre">
-                                        Paris-Brest
-                                    </p>
-                                    <p class="menu__card__text--soustitre">
-                                        Revisité
-                                    </p>
+                            <label>
+                                <div class="menu__card">
+                                    <div class="menu__card__content">
+                                        <div class="menu__card__text">
+                                            <p class="menu__card__text--titre">
+                                                Paris-Brest
+                                            </p>
+                                            <p
+                                                class="menu__card__text--soustitre"
+                                            >
+                                                Revisité
+                                            </p>
+                                        </div>
+                                        <p class="menu__card__text--prix">
+                                            18€
+                                        </p>
+                                    </div>
+                                    <input type="checkbox" />
+                                    <div class="menu__card__validation">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="60"
+                                            height="69"
+                                            viewBox="0 0 60 69"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
+                                                fill="#99E2D0"
+                                            />
+                                            <path
+                                                d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <p class="menu__card__text--prix">18€</p>
-                            </div>
-                            <div class="menu__body__card">
-                                <div class="menu__card__text">
-                                    <p class="menu__card__text--titre">
-                                        Macaron au chocolat d'exception
-                                    </p>
-                                    <p class="menu__card__text--soustitre">
-                                        Et glace à la vanille de Madagascar
-                                    </p>
+                            </label>
+                            <label>
+                                <div class="menu__card">
+                                    <div class="menu__card__content">
+                                        <div class="menu__card__text">
+                                            <p class="menu__card__text--titre">
+                                                Macaron au chocolat d'exception
+                                            </p>
+                                            <p
+                                                class="menu__card__text--soustitre"
+                                            >
+                                                Et glace à la vanille de
+                                                Madagascar
+                                            </p>
+                                        </div>
+                                        <p class="menu__card__text--prix">
+                                            22€
+                                        </p>
+                                    </div>
+                                    <input type="checkbox" />
+                                    <div class="menu__card__validation">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="60"
+                                            height="69"
+                                            viewBox="0 0 60 69"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
+                                                fill="#99E2D0"
+                                            />
+                                            <path
+                                                d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <p class="menu__card__text--prix">22€</p>
-                            </div>
-                            <div class="menu__body__card">
-                                <div class="menu__card__text">
-                                    <p class="menu__card__text--titre">
-                                        Mousse au chocolat
-                                    </p>
-                                    <p class="menu__card__text--soustitre">
-                                        Au piment d'Espelette et à la truffe
-                                        noire
-                                    </p>
+                            </label>
+                            <label>
+                                <div class="menu__card">
+                                    <div class="menu__card__content">
+                                        <div class="menu__card__text">
+                                            <p class="menu__card__text--titre">
+                                                Mousse au chocolat
+                                            </p>
+                                            <p
+                                                class="menu__card__text--soustitre"
+                                            >
+                                                Au piment d'Espelette et à la
+                                                truffe noire
+                                            </p>
+                                        </div>
+                                        <p class="menu__card__text--prix">
+                                            23€
+                                        </p>
+                                    </div>
+                                    <input type="checkbox" />
+                                    <div class="menu__card__validation">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="60"
+                                            height="69"
+                                            viewBox="0 0 60 69"
+                                            fill="none"
+                                        >
+                                            <path
+                                                d="M0.5 0H44.5C52.7843 0 59.5 6.71573 59.5 15V54C59.5 62.2843 52.7843 69 44.5 69H0.5V0Z"
+                                                fill="#99E2D0"
+                                            />
+                                            <path
+                                                d="M40.0847 34.9656C40.0847 40.4884 35.6076 44.9656 30.0847 44.9656C24.5619 44.9656 20.0847 40.4884 20.0847 34.9656C20.0847 29.4427 24.5619 24.9656 30.0847 24.9656C35.6076 24.9656 40.0847 29.4427 40.0847 34.9656ZM28.928 40.2605L36.3474 32.8411C36.5993 32.5892 36.5993 32.1807 36.3474 31.9288L35.435 31.0164C35.1831 30.7644 34.7746 30.7644 34.5226 31.0164L28.4718 37.0671L25.6469 34.2421C25.3949 33.9902 24.9864 33.9902 24.7344 34.2421L23.8221 35.1545C23.5701 35.4065 23.5701 35.815 23.8221 36.0669L28.0156 40.2605C28.2676 40.5124 28.676 40.5124 28.928 40.2605Z"
+                                                fill="white"
+                                            />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <p class="menu__card__text--prix">23€</p>
-                            </div>
+                            </label>
                         </div>
                     </div>
                     <div class="menu__foot">
-                        <button class="banniere__btn-explorer">
-                            Commander
-                        </button>
+                        <button class="menu__foot__btn">Commander</button>
                     </div>
                 </div>
             </section>
         </main>
+        <footer>
+            <h3 class="logo">ohmyfood</h3>
+            <ul class="footer__content">
+                <li>
+                    <i class="fa-solid fa-utensils"></i
+                    ><a href="#"> Proposer un restaurant</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-handshake-angle"></i
+                    ><a href="#">Devenir partenaire</a>
+                </li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </footer>
     </body>
 </html>

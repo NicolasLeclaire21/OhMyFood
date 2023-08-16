@@ -1,3 +1,70 @@
+@mixin bouton-gradient {
+    width: 218px;
+    height: 50px;
+    background: linear-gradient(#FF79DA, #9256dc);
+    border-radius: 25px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    z-index: 1;
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+    &::after {
+        border-radius: 25px;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+        background: linear-gradient(lighten(#FF79DA, 5) 0%, lighten(#9256dc, 5) 100%);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
+}
+
+@mixin coeur {
+    font-size: 21px;
+    position: absolute;
+    input {
+        display: none;
+        &:checked + .coeur--vide {
+            opacity: 0;
+        }
+        &:checked ~ .coeur--rempli {
+            opacity: 1;
+            color: transparent;
+            background-image: linear-gradient(175deg, #9356DC 0%, #FF79DA 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+    }
+    .coeur--vide {
+        color: black;
+        opacity: 1;
+        transition: opacity 250ms;
+        position: absolute;
+    }
+    .coeur--rempli {
+        opacity: 0;
+        transition: opacity 250ms;
+        position: absolute;
+    }
+}
+
+
+
+
+
+
+
 * {
     font-family: "roboto", sans-serif;
 }
@@ -19,17 +86,6 @@ main {
     background-color: #F6F6F6;
 }
 
-section {
-}
-
-input {
-    width: 109px;
-    font-size: 16px;
-    border: none;
-    color: #353535;
-    background-color: #EAEAEA;
-}
-
 .logo {
     font-family: "shrikhand", sans-serif;
     margin: 0;
@@ -42,6 +98,13 @@ input {
     align-items: center;
     gap: 17px;
     background-color: #EAEAEA;
+    input {
+        width: 109px;
+        font-size: 16px;
+        border: none;
+        color: #353535;
+        background-color: #EAEAEA;
+    }
 }
 
 .banniere {
@@ -56,35 +119,7 @@ input {
         font-size: 18px;
     }
     .banniere__btn-explorer {
-        width: 218px;
-        height: 50px;
-        background: linear-gradient(#FF79DA, #9256dc);
-        border-radius: 25px;
-        border: none;
-        color: #FFFFFF;
-        font-size: 16px;
-        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-        position: relative;
-        z-index: 1;
-        &:hover {
-            &::after {
-                opacity: 1;
-            }
-        }
-        &::after {
-            border-radius: 25px;
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
-            background: linear-gradient(lighten(#FF79DA, 5) 0%, lighten(#9256dc, 5) 100%);
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 250ms;
-        }
+        @include bouton-gradient()
     }
 }
 
@@ -185,37 +220,18 @@ input {
             }
         }
         .card__coeur {
-            font-size: 21px;
-            position: absolute;
-            bottom: 30px;
-            right: 20px;
-            
-            &--vide {
-                color: black;
-            }
-           
-            &--rempli {
-                opacity: 0;
-                transition: opacity 250ms;
-                &:hover {
-                    opacity: 1;
-                    color: transparent;
-                    background-image: linear-gradient(175deg, #9356DC 0%, #FF79DA 100%);
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                }
-            }
+            bottom: 50px;
+            right: 40px;
+            @include coeur()
         }
     }
 }
 
-.footer {
+footer {
     background-color: #353535;
     color: #FFFFFF;
     padding: 25px;
-    &__titre {
-    }
-    &__content {
+    ul {
         list-style-type: none;
         padding: 0;
     }
@@ -231,6 +247,7 @@ input {
         padding-right: 11px;
     }
 }
+
 
 @media (min-width: 768px) {
     .banniere {
@@ -260,15 +277,15 @@ input {
         }
     }
 
-    .footer {
+    footer {
         display: flex;
         flex-direction: row-reverse;
         gap: 60px;
-        &__logo {
+        & .logo {
             display: flex;
             align-items: center;
         }
-        &__content {
+        & .footer__content {
             display: flex;
             gap: 40px;
         }
