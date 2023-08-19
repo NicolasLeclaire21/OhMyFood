@@ -81,8 +81,7 @@ input {
         margin-bottom: 12px;
         height: 69px;
         overflow: hidden;
-        
-
+        animation: opacity 1s both;
 
         &__content {
             display: flex;
@@ -134,4 +133,49 @@ input {
             @include bouton-gradient()
         }
     }
+}
+
+@keyframes opacity {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+#card-1 {
+    animation-delay: 0.1s;
+}
+
+#card-2 {
+    animation-delay: 0.2s;
+}
+
+#card-3 {
+    animation-delay: 0.3s;
+}
+
+#card-4 {
+    animation-delay: 0.4s;
+}
+
+#card-5 {
+    animation-delay: 0.5s;
+}
+
+#card-6 {
+    animation-delay: 0.6s;
+}
+
+#card-7 {
+    animation-delay: 0.7s;
+}
+
+#card-8 {
+    animation-delay: 0.8s;
+}
+
+#card-9 {
+    animation-delay: 0.9s;
+}
+
+#card-10 {
+    animation-delay: 1s;
 }
